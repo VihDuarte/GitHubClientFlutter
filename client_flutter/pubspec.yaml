@@ -23,6 +23,8 @@ dependencies:
     path: ../client_base
   json_serializable:
     2.0.2
+  common_flutter:
+    path: ../common_flutter
 
   http: 0.12.0
 
