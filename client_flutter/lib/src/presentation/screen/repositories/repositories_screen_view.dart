@@ -12,7 +12,8 @@ class RepositoriesScreenView extends StatelessWidget
   }
 
   Widget build(BuildContext context) {
-    return StreamBuilder<RepositoriesScreenViewModel>(
+    return Scaffold(
+        body: StreamBuilder<RepositoriesScreenViewModel>(
       stream: viewModelObservable,
       builder: (BuildContext context,
           AsyncSnapshot<RepositoriesScreenViewModel> snapshot) {
@@ -29,7 +30,7 @@ class RepositoriesScreenView extends StatelessWidget
               return _itemBuilder(repository);
             });
       },
-    );
+    ));
   }
 
   @override

@@ -7,6 +7,7 @@ import 'package:rxdart/rxdart.dart';
 class ClientScreensProvider {
   static Widget getRepositoriesScreen(
     MostKnownOutputBoundary boundary,
+    Function(Action) _dispatcher,
     Widget Function(RepositoryOutputBoundary) itemBuilder,
   ) {
     RepositoriesScreenViewContract<Widget> Function(
@@ -17,7 +18,7 @@ class ClientScreensProvider {
 
     return DuckStatefulContainer(
       _viewProvider,
-      RepositoriesScreenPresenter<Widget>(boundary),
+      RepositoriesScreenPresenter<Widget>(boundary, _dispatcher),
     );
   }
 }
